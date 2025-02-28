@@ -1,0 +1,173 @@
+.pricing {
+  position: relative;
+  padding: 5rem $padding-base;
+  margin: 0 auto;
+  text-align: center;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      #f8f8f8 -45.04%,
+      rgba(248, 248, 248, 0) 88.56%
+    );
+
+    z-index: -1;
+  }
+  &__title {
+    font-size: $title-font-size;
+    font-weight: $font-weight-medium;
+    color: rgba(11, 19, 42, 1);
+    margin-bottom: 1.875rem;
+  }
+  &__description {
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    color: rgba(79, 86, 101, 1);
+    margin-bottom: $spacing-medium;
+    margin: 0 auto 3.75rem;
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    gap: $spacing-large;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 1);
+    border: 0.125rem solid rgba(221, 221, 221, 1);
+    border-radius: 0.625rem;
+    padding: 5rem 4.3rem 3.125rem;
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: translateY(-5px);
+    }
+    &:last-child {
+      border: 0.125rem solid rgba(245, 56, 56, 1);
+    }
+  }
+  &__image {
+    width: 100%;
+    max-width: 9rem;
+    margin-bottom: $spacing-medium;
+  }
+  &-card__title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: rgba(11, 19, 42, 1);
+    margin-bottom: 1.875rem;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    margin-bottom: 3.125rem;
+  }
+  &__item {
+    display: flex;
+    gap: 1.266rem;
+    align-items: center;
+  }
+  &__text {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: rgba(79, 86, 101, 1);
+  }
+  &__price,
+  &__button {
+    margin-top: auto;
+  }
+  &__price {
+    font-size: 1.5625rem;
+    font-weight: 500;
+    color: rgba(11, 19, 42, 1);
+    margin-bottom: 1.25rem;
+  }
+  &__btn {
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(245, 56, 56, 1);
+    border: 0.125rem solid rgba(245, 56, 56, 1);
+    border-radius: 3.125rem;
+    padding: 0.8125rem 4rem;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background: #f53838;
+      color: #fff;
+      box-shadow: 0px 10px 20px rgba(245, 56, 56, 0.3);
+      transform: translateY(-3px);
+    }
+  }
+  &__btn--premium {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(245, 56, 56, 1);
+    box-shadow: 0px 15px 20px rgba(245, 56, 56, 0.4);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      background-color: rgba(220, 38, 38, 1);
+      box-shadow: 0px 15px 25px rgba(220, 38, 38, 0.5);
+    }
+  }
+  @media (max-width: 1200px) {
+    &__cards {
+      gap: 2rem;
+    }
+    &__card {
+      padding: 4rem 3rem 2.5rem;
+    }
+  }
+  @include tablet {
+    padding: 4rem $padding-base;
+    &__cards {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-large;
+    }
+    &__card {
+      padding: 5rem 3.5rem 3.125rem;
+    }
+  }
+  @include phone {
+    padding: 3rem $spacing-small;
+
+    &__title {
+      font-size: 1.5rem;
+    }
+    &__cards {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    &__card {
+      padding: 3rem 2rem 1.5rem;
+    }
+
+    &__image {
+      max-width: 6rem;
+    }
+    &__btn--premium {
+      box-shadow: 0px 8px 15px rgba(245, 56, 56, 0.3);
+    }
+  }
+  @include small-phone {
+    padding: 2rem $spacing-small;
+
+    &_image {
+      max-width: 5rem;
+    }
+
+    &__btn {
+      padding: 0.5rem 3rem;
+    }
+  }
+}

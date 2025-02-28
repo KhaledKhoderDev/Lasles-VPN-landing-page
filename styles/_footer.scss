@@ -1,0 +1,165 @@
+.footer {
+  padding: 10rem 0rem 6.25rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: rgba(248, 248, 248, 1);
+    height: 100%;
+    width: 100vw;
+    top: 0;
+    left: 50%;
+    transform: translatex(-50%);
+    z-index: -1;
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    column-gap: 4.5rem;
+    & > :last-child {
+      margin-left: auto;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 1.25rem;
+  }
+  &__description {
+    margin-bottom: 1.875rem;
+    font-size: 1rem;
+    line-height: 1.875rem;
+    font-weight: 400;
+  }
+  &__highlight {
+    font-weight: 500;
+  }
+  &__social {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  &__icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+  }
+  &__icon:hover {
+    transform: scale(1.1);
+  }
+  &__copyright {
+    color: rgba(175, 181, 192, 1);
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  &__copyright--highlight {
+    font-weight: 500;
+  }
+  &__title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: rgba(11, 19, 42, 1);
+    margin-bottom: 2rem;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  &__item {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(79, 86, 101, 1);
+  }
+  @include tablet {
+    padding: 9rem 1.5rem 4rem;
+
+    &__wrapper {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      justify-content: center;
+      & > :last-child {
+        grid-column: 2;
+        margin-left: 0;
+      }
+    }
+
+    &__description {
+      font-size: 1rem;
+    }
+
+    &__title {
+      font-size: 1.1rem;
+    }
+
+    &__column--empty {
+      display: none;
+    }
+  }
+
+  @include phone {
+    padding: 10rem 1.5rem 4rem;
+
+    &__wrapper {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      text-align: center;
+
+      & > :first-child {
+        grid-column: 1/-1;
+        text-align: center;
+      }
+      & > :last-child {
+        margin-left: 0;
+      }
+    }
+
+    &__social {
+      justify-content: center;
+    }
+
+    &__list {
+      align-items: center;
+    }
+    &__column--empty {
+      display: none;
+    }
+
+    &__title {
+      font-size: 1rem;
+    }
+
+    &__description {
+      font-size: 1rem;
+    }
+
+    &__copyright {
+      font-size: 0.85rem;
+    }
+  }
+
+  @include small-phone {
+    padding: 10rem 1rem 3rem;
+
+    &__title {
+      font-size: 0.95rem;
+    }
+
+    &__description {
+      font-size: 0.85rem;
+    }
+
+    &__copyright {
+      font-size: 0.8rem;
+    }
+
+    &__icon {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+  }
+}

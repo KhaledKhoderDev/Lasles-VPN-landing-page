@@ -1,0 +1,243 @@
+.testimonials {
+  padding: 0 1rem 0;
+  margin-bottom: 0;
+  text-align: center;
+  &__title {
+    font-size: 2.1875rem;
+    font-weight: 500;
+    line-height: 3.125rem;
+    color: rgba(11, 19, 42, 1);
+    margin-bottom: 1.25rem;
+  }
+  &__description {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.875rem;
+    color: rgba(79, 86, 101, 1);
+    margin-bottom: 3.75rem;
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: $spacing-large;
+
+    position: relative;
+  }
+  &__card {
+    border: 0.125rem solid rgba(221, 221, 221, 1);
+    border-radius: 0.625rem;
+    padding: 1.875rem;
+    text-align: left;
+    max-width: 25rem;
+    width: 100%;
+    transition: box-shadow 0.3 ease-in-out, backdrop-filter 0.3s ease-in-out;
+
+    &--active {
+      border: 2px solid rgba(245, 56, 56, 1);
+      box-shadow: 0 40px 100px rgba(13, 16, 37, 0.1);
+    }
+  }
+  &__card.move-right {
+    animation: moveRight 0.5s ease forwards;
+  }
+  &__card.move-left {
+    animation: moveLeft 0.5s ease forwards;
+  }
+  @keyframes moveRight {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+  @keyframes moveLeft {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  &__image {
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+  }
+  &__name {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: rgba(11, 19, 42, 1);
+  }
+  &__location {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: rgba(79, 86, 101, 1);
+  }
+  &__rating {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: auto;
+  }
+  &__score {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(11, 19, 42, 1);
+  }
+  &__text {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.875rem;
+    color: rgba(11, 19, 42, 1);
+  }
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3.75rem;
+  }
+  &__dots {
+    display: flex;
+    gap: 0.9375rem;
+  }
+  &__dot {
+    width: 0.9375rem;
+    height: 0.9375rem;
+    border-radius: 50%;
+    background-color: rgba(221, 224, 228, 1);
+  }
+  &__dot--wide {
+    width: 2.8125rem;
+    border-radius: 1rem;
+    background-color: rgba(245, 56, 56, 1);
+  }
+  &__arrows {
+    display: flex;
+    gap: 1.25rem;
+  }
+  &__arrow {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(245, 56, 56, 1);
+    border: 0.125rem solid rgba(245, 56, 56, 1);
+    border-radius: 50%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+      background-color: rgba(245, 56, 56, 1);
+    }
+  }
+
+  &__arrow--prev {
+    transform: rotate(180deg);
+  }
+
+  @include tablet {
+    &__cards {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    &__card--active {
+      box-shadow: 0 30px 70px rgba(13, 16, 37, 0.08);
+    }
+    &__title {
+      font-size: 1.75rem;
+    }
+
+    &__description {
+      font-size: 0.9rem;
+    }
+  }
+
+  @include phone {
+    &__cards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    &__card {
+      max-width: 90%;
+    }
+
+    &__card--active {
+      box-shadow: 0 20px 50px rgba(13, 16, 37, 0.06);
+    }
+
+    &__navigation {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    &__dots {
+      margin-bottom: 1rem;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+    }
+
+    &__description {
+      font-size: 0.875rem;
+    }
+
+    &__arrow {
+      padding: 0.7rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  @include small-phone {
+    &__cards {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &__card {
+      padding: 1rem;
+      max-width: 95%;
+    }
+
+    &__card--active {
+      box-shadow: 0 10px 30px rgba(13, 16, 37, 0.05);
+    }
+
+    &__title {
+      font-size: 1.25rem;
+    }
+
+    &__description {
+      font-size: 0.8rem;
+    }
+
+    &__arrow {
+      padding: 0.6rem;
+      font-size: 1rem;
+    }
+  }
+}

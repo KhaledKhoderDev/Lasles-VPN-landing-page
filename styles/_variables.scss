@@ -1,0 +1,39 @@
+// 🎨 Colors
+$primary-color: #f53838;
+$secondary-color: #0b132a;
+$text-color: #4f5665;
+$highlight-color: #f98181;
+$light-gray: #f8f8f8;
+$border-gray: #dddddd;
+$background-gray: rgba(255, 255, 255, 0.1);
+$white: #ffffff;
+
+// 🏷 Typography
+$main-font: 'Rubik', sans-serif;
+$font-size-base: 1rem; // 16px
+$font-size-large: 1.25rem; // 20px
+$font-size-small: 0.875rem; // 14px;
+$title-font-size: 2.1875rem;
+$subtitle-font-size: 1rem;
+$button-font-size: 1rem;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// 📏 Spacing
+$container-width: 75rem;
+$border-radius: 0.625rem;
+$section-padding: 4rem 1rem;
+$padding-base: 1rem;
+$margin-base: 1.5rem;
+$spacing-small: 1.25rem;
+$spacing-medium: 1.875rem;
+$spacing-large: 3.125rem;
+
+// 🌟 Shadows
+$box-shadow-light: 0px 40px 40px rgba(13, 16, 37, 0.06);
+$box-shadow-medium: 0 20px 35px rgba(245, 56, 56, 0.35);
+$box-shadow-strong: 0px 15px 25px rgba(220, 38, 38, 0.5);
+
+// 💡 Transitions
+$transition-speed: 0.3s ease;

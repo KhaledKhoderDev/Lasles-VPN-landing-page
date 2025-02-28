@@ -1,0 +1,251 @@
+// Start header
+.header {
+  padding: 1.5rem $padding-base;
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    img {
+      width: 9.3125rem;
+      max-height: 2.265rem;
+    }
+  }
+
+  &__nav {
+    .nav__list {
+      display: flex;
+      gap: 2rem;
+
+      .nav__item {
+        a {
+          font-size: $button-font-size;
+          font-weight: 400;
+          color: $text-color;
+          transition: color $transition-speed;
+
+          &:hover {
+            color: $highlight-color;
+          }
+        }
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+
+    .btn {
+      font-size: $button-font-size;
+      font-weight: 500;
+    }
+
+    .btn--signin {
+      color: $secondary-color;
+      transition: color $transition-speed;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    .btn--signup {
+      padding: 0.5rem 1.8rem;
+      color: $primary-color;
+      border: 1px solid $primary-color;
+      border-radius: 3.125rem;
+      transition: background-color $transition-speed, color $transition-speed;
+      &:hover {
+        background-color: $primary-color;
+        color: $white;
+      }
+    }
+  }
+  &__menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  &__mobile-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    background-color: $white;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1.5rem;
+    transform: translateX(100%);
+    transition: transform $transition-speed;
+    z-index: 100;
+    &.active {
+      transform: translateX(0);
+    }
+    .nav__list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 4rem;
+
+      .nav__item a {
+        font-size: 1.2rem;
+        color: $secondary-color;
+        font-weight: 500;
+      }
+    }
+  }
+  /* 📱 الأجهزة اللوحية (Tablets) */
+  @include tablet {
+    .header__nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .nav__list {
+      gap: 1.5rem;
+    }
+
+    .header__actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .btn--signin {
+      font-size: 0.8rem;
+      padding: 0.3rem 1rem;
+    }
+
+    .btn--signup {
+      font-size: 0.8rem;
+      padding: 0.3rem 1.2rem;
+      border-radius: 1.5rem;
+    }
+    .header__menu-icon {
+      display: none;
+    }
+
+    .header__logo img {
+      width: 7rem;
+    }
+  }
+
+  /* 📱(Mobile Phones) */
+  @include phone {
+    & {
+      padding: $padding-base;
+      &__wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      &__nav {
+        display: none;
+      }
+
+      &__menu-icon {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        margin-left: auto;
+      }
+
+      &__mobile-nav {
+        width: 80%;
+        height: 100vh;
+        background-color: $white;
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+        padding: 2rem 1.5rem;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        &.active {
+          transform: translateX(0);
+        }
+
+        &-header {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+
+          .header__close-icon {
+            font-size: 2rem;
+            cursor: pointer;
+            color: $primary-color;
+            transition: color $transition-speed;
+
+            &:hover {
+              color: #d12a2a;
+            }
+          }
+        }
+
+        .nav__list {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          margin-top: 2rem;
+        }
+
+        .nav__item a {
+          font-size: 1.2rem;
+          font-weight: 500;
+          color: $secondary-color;
+          transition: color $transition-speed;
+
+          &:hover {
+            color: $primary-color;
+          }
+
+          &:active {
+            color: #d12a2a;
+          }
+        }
+      }
+
+      &__actions {
+        display: none;
+      }
+
+      &__logo img {
+        width: 10rem;
+      }
+    }
+  }
+
+  @media (min-width: 769px) {
+    .header__mobile-nav {
+      display: none !important;
+    }
+  }
+
+  /* 📱 (Small Phones) */
+  @include small-phone {
+    .header__logo img {
+      width: 7rem;
+    }
+
+    .header__menu-icon {
+      font-size: 1.8rem;
+    }
+
+    .header__mobile-nav {
+      padding: 1rem;
+    }
+
+    .header__mobile-nav .nav__item a {
+      font-size: 1rem;
+    }
+  }
+}

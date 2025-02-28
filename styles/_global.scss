@@ -1,0 +1,40 @@
+// Global variables
+body {
+  font-family: $main-font;
+  scroll-behavior: smooth;
+  background-color: $white;
+  overflow-x: hidden;
+  .container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 $padding-base;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+@include tablet {
+  .container {
+    gap: 2.5rem !important;
+  }
+}
+@include phone {
+  .container {
+    gap: 1rem !important;
+    width: 100%;
+  }
+}
+@include small-phone {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+// End Global variables

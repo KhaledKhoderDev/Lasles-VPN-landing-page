@@ -1,0 +1,151 @@
+.hero {
+  padding: 2rem 1rem;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-items: center;
+
+    margin: 0 auto;
+    align-items: stretch;
+  }
+
+  &__content {
+    .hero__title {
+      font-size: 3.125rem;
+      font-weight: 500;
+      color: #0b132a;
+      line-height: 4.375rem;
+      margin-bottom: 1.2rem;
+    }
+    .hero__brand {
+      font-weight: 700;
+    }
+    .hero__description {
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.875rem;
+      color: #4f5665;
+      margin-bottom: 3rem;
+    }
+    .hero__text-bold {
+      font-weight: 500;
+    }
+    .hero__action {
+      width: 15.625rem;
+      background-color: #f53838;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 1rem 2rem;
+      border-radius: 0.625rem;
+      cursor: pointer;
+      box-shadow: 0px 20px 35px rgba(245, 56, 56, 0.35);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #d12727;
+      }
+    }
+  }
+
+  &__image {
+    img {
+      width: 100%;
+      max-width: 38.1875rem;
+      height: 100%;
+      // object-fit: cover;
+    }
+  }
+  @include tablet {
+    & {
+      padding: 1rem;
+    }
+    &__wrapper {
+      gap: 1.5rem;
+    }
+    &__content {
+      .hero__title {
+        font-size: 2.5rem;
+        line-height: 3.5rem;
+      }
+      .hero__description {
+        font-size: 1rem;
+        line-height: 1.7rem;
+      }
+      .hero__action {
+        width: 13rem;
+        padding: 0.9rem 1.8rem;
+        font-size: 0.9rem;
+      }
+    }
+    &__image {
+      img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+  @include phone {
+    & {
+      padding: 1rem;
+      margin-top: -2rem;
+    }
+    &__wrapper {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 2rem;
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .hero__title {
+        font-size: 2rem;
+        line-height: 3rem;
+      }
+      .hero__description {
+        font-size: 0.9rem;
+        margin-top: -1rem;
+      }
+      .hero__action {
+        width: 12rem;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.85rem;
+        margin-top: -2rem;
+        box-shadow: 0px 8px 16px rgba(245, 56, 56, 0.15);
+      }
+    }
+    &__image {
+      img {
+        max-width: 80%;
+      }
+    }
+  }
+  @include small-phone {
+    &__content {
+      .hero__title {
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+      }
+      .hero__description {
+        font-size: 0.85rem;
+      }
+      .hero__action {
+        width: 11rem;
+        padding: 0.7rem 1.2rem;
+        font-size: 0.8rem;
+      }
+    }
+    &__image {
+      img {
+        max-width: 90%;
+      }
+    }
+  }
+}
+// End Hero

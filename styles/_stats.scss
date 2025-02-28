@@ -1,0 +1,123 @@
+.stats {
+  width: 100%;
+
+  max-width: 71.25rem;
+  padding: 3rem 5rem;
+  border-radius: 0.625rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(114px);
+  box-shadow: 0px 40px 40px rgba(13, 16, 37, 0.06);
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      border: 1px solid rgba(238, 239, 242, 1);
+      height: 7.848125rem;
+    }
+    &::before {
+      left: 28.33%;
+    }
+    &::after {
+      left: 70.66%;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+  &__icon {
+    width: 3.4375rem;
+    height: 3.4375rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__title {
+    font-size: 1.5625rem;
+    font-weight: 700;
+    color: rgba(11, 19, 42, 1);
+  }
+
+  &__text {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: rgba(79, 86, 101, 1);
+  }
+  @include tablet {
+    padding: 3rem 5rem;
+    &__wrapper {
+      &::before {
+        left: 28%;
+      }
+
+      &::after {
+        left: 69%;
+      }
+    }
+    &__icon {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    &__title {
+      font-size: 1.3rem;
+    }
+    &__text {
+      font-size: 1rem;
+    }
+  }
+  @include phone {
+    box-shadow: 0px 10px 15px rgba(13, 16, 37, 0.03);
+
+    &__wrapper {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+    &__item {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+      padding: 0.5rem 0;
+    }
+    &__title {
+      font-size: 1.25rem;
+    }
+
+    &__text {
+      font-size: 1rem;
+    }
+  }
+  @include small-phone {
+    box-shadow: none;
+    border: 1px solid rgba(238, 239, 242, 0.5);
+    &__wrapper {
+      flex-direction: column;
+      gap: 2rem;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    &__item {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+}
